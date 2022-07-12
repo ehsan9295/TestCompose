@@ -24,7 +24,6 @@ class SecondFragment : Fragment() {
         val view = ComposeView(requireContext()).apply {
             setContent {
                 Surface {
-                    Column {
                         TextWithoutBackground()
                         //***************************************************************************************
                         //***************************************************************************************
@@ -34,7 +33,6 @@ class SecondFragment : Fragment() {
                         //***************************************************************************************
 
                         //TextWithBackground()
-                    }
                 }
             }
         }

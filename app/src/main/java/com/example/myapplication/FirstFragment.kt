@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CornerBasedShape
@@ -21,6 +22,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -50,13 +52,17 @@ class FirstFragment : Fragment() {
     fun SettingsBar() {
         Row(
             Modifier
-                .fillMaxWidth()
+                    //No matter which size or padding we use the problem will occur
+                .wrapContentWidth()
                 .height(24.dp)
+                .padding(horizontal = 100.dp),
+            verticalAlignment = CenterVertically
         ) {
             Row(
                 Modifier
                     .weight(1f)
                     .wrapContentWidth(Alignment.Start)
+                    .align(CenterVertically)
                     .size(113.dp, 24.dp)
             ) {
                 //All channels
@@ -104,7 +110,7 @@ class FirstFragment : Fragment() {
             ) {
                 Text(
                     text = stringResource(R.string.edit),
-                    color = Color.White
+                    color = Color.Black
                 )
             }
         }
